@@ -45,10 +45,10 @@ function Ingresar(){
      var s = json.token.split(".");
      var MenuJS = JSON.parse(atob(s[1]));
      if(MenuJS.Usuario.modulo != undefined){
-       //console.log(MenuJS.Usuario.modulo);
-       $(location).attr("href", MenuJS.Usuario.modulo + "/starter.html");
+        var mod = "afiliacion";
+        mod = Array.isArray(MenuJS.Usuario.modulo)==true?"bienestar":"afiliacion";
+        $(location).attr("href", mod + "/starter.html");
      }else{
-       //console.log(MenuJS);
        $(location).attr("href","starter.html");
      }
    }
