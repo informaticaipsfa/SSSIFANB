@@ -49,7 +49,7 @@ function Ingresar(){
         mod = Array.isArray(MenuJS.Usuario.modulo)==true?"bienestar":"afiliacion";
         $(location).attr("href", mod + "/starter.html");
      }else{
-       $(location).attr("href","starter.html");
+       $(location).attr("href","afiliacion/starter.html");
      }
    }
    if(this.status === 403){
