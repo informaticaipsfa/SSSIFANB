@@ -16,6 +16,12 @@ $(function (){
         Ingresar();
     }
   });
+
+  Pace.on("done", function (){
+    $("#xpage-pace").fadeIn(1500);
+  });
+
+
 });
 
 function Ingresar(){
@@ -35,7 +41,7 @@ function Ingresar(){
   var xhttp = new XMLHttpRequest();
   $("#_cargando").show();
 
-  xhttp.open("POST", Conn.URLSEC + "/ipsfa/app/api/wusuario/login", true);
+  xhttp.open("POST", Conn.URLSEC + "/ipsfa/app/api/wusuario/login");
   xhttp.onreadystatechange = function() {
 
     if (this.readyState === 4 && this.status === 200) {
@@ -51,9 +57,15 @@ function Ingresar(){
      }else{
        $(location).attr("href","afiliacion/starter.html");
      }
-   }
-   if(this.status === 403){
-     $.notify("Verifique usuario o clave");
+   }else if(this.readyState === 4 && this.status === 403){
+     $.notify("Debe verificar el usuario o clave para ingresar al sistema...", {
+      	animate: {
+      		enter: 'animated bounceIn',
+      		exit: 'animated bounceOut'
+      	},
+        type: 'danger'
+      });
+
      $("#_login").attr("disabled", true);
      $("#usuario").val("");
      $("#clave").val("");

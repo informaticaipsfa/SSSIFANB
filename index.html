@@ -11,18 +11,27 @@
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="bower_components/animate/animate.css">
+  <link rel="stylesheet" href="bower_components/pace/themes/blue/pace-theme-loading-bar.css">
+  <style>
+    #xpage-pace{
+      display: none;
+    };
+  </style>
+
+  <script src="bower_components/pace/pace.min.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <script type="text/javascript" src="js/es6/config.js"></script>
   <script src="js/es6/login.js"></script>
-  <script src="bower_components/notify/notify.min.js"></script>
+  <script src="bower_components/notify/bootstrap-notify.min.js"></script>
 </head>
 
 <body class="hold-transition login-page">
 
-<div class="login-box">
+<div class="login-box"  id="xpage-pace">
 
   <div class="login-box-body" style="background-color:transparent">
 
@@ -30,7 +39,7 @@
         <div class="box-header with-border">
             <center><h3 class="box-title">Sistema de Seguridad Social</h3></center>
         </div>
-        <div class="box-body" >
+        <div class="box-body">
           <div class="login-logo">
             <img src="images/lg1.png" width="50%" height="50%"><h3>SSSIFANB</h3>
           </div>
