@@ -50,10 +50,10 @@ function Ingresar(){
 
      var s = json.token.split(".");
      var MenuJS = JSON.parse(atob(s[1]));
+
      if(MenuJS.Usuario.modulo != undefined){
-        var mod = "afiliacion";
-        mod = Array.isArray(MenuJS.Usuario.modulo)==true?"bienestar":"afiliacion";
-        $(location).attr("href", mod + "/starter.html");
+       var mod = Array.isArray(MenuJS.Usuario.modulo)==true?MenuJS.Usuario.modulo[0]:"afiliacion";
+       $(location).attr("href", mod + "/starter.html");
      }else{
        $(location).attr("href","afiliacion/starter.html");
      }
