@@ -39,9 +39,13 @@ function Ingresar(){
   }
   let login = new Login($("#usuario").val(), $("#clave").val());
   var xhttp = new XMLHttpRequest();
+  xhttp.withCredentials = true;
+  
   $("#_cargando").show();
 
   xhttp.open("POST", Conn.URLSEC + "/ipsfa/app/api/wusuario/login");
+  xhttp.setRequestHeader("Content-Type", "application/json");
+
   xhttp.onreadystatechange = function() {
 
     if (this.readyState === 4 && this.status === 200) {
