@@ -57,14 +57,18 @@ function Ingresar(){
      
      console.log(MenuJS);
      if(MenuJS.Usuario.modulo != undefined){
-
        var mod = Array.isArray(MenuJS.Usuario.modulo)==true?MenuJS.Usuario.modulo[0]:"afiliacion";
-       
-       $(location).attr("href", mod.url + "?jwt=" + json.token);
+      if( mod.url.indexOf("http") !== -1 ){
+        $(location).attr("href", mod.url + "?jwt=" + json.token);
+      }else{
+        $(location).attr("href", mod.url + "/starter.html"); 
+      }
+
      }else{
        $(location).attr("href","afiliacion/starter.html");
      }
-   }else if(this.readyState === 4 && this.status === 403){
+
+    }else if(this.readyState === 4 && this.status === 403){
      $.notify("Debe verificar el usuario o clave para ingresar al sistema...", {
       	animate: {
       		enter: 'animated bounceIn',
